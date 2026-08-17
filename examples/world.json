@@ -1,0 +1,49 @@
+{
+  "clubs": [
+    {
+      "id": 109,
+      "name": "Real Madrid",
+      "league": "ESP1",
+      "prestige": 95,
+      "strength": 88,
+      "budget_m": 180.0,
+      "wage_ceiling_k": 500.0,
+      "archetype": "elite",
+      "european_status": "champions",
+      "player_ids": [1, 2, 3, 4, 5, 6]
+    },
+    {
+      "id": 377,
+      "name": "Brighton",
+      "league": "ENG1",
+      "prestige": 68,
+      "strength": 80,
+      "budget_m": 70.0,
+      "wage_ceiling_k": 190.0,
+      "archetype": "developer",
+      "european_status": "none",
+      "player_ids": [11, 12, 13, 14, 15]
+    }
+  ],
+  "players": [
+    {"id": 1, "name": "RM Goalkeeper", "club_id": 109, "position": "GK", "age": 32, "overall": 88, "potential": 88, "value_m": 35.0, "wage_k": 260.0, "contract_years": 2.0, "importance": 0.9},
+    {"id": 2, "name": "RM Centre Back A", "club_id": 109, "position": "CB", "age": 27, "overall": 86, "potential": 87, "value_m": 65.0, "wage_k": 240.0, "contract_years": 3.0, "importance": 0.9},
+    {"id": 3, "name": "RM Centre Back B", "club_id": 109, "position": "CB", "age": 22, "overall": 84, "potential": 90, "value_m": 70.0, "wage_k": 170.0, "contract_years": 4.0, "importance": 0.8},
+    {"id": 4, "name": "RM Midfielder", "club_id": 109, "position": "CMF", "age": 26, "overall": 87, "potential": 88, "value_m": 90.0, "wage_k": 300.0, "contract_years": 4.0, "importance": 0.9},
+    {"id": 5, "name": "RM Winger", "club_id": 109, "position": "LWF", "age": 25, "overall": 89, "potential": 91, "value_m": 125.0, "wage_k": 380.0, "contract_years": 4.0, "importance": 1.0},
+    {"id": 6, "name": "RM Striker", "club_id": 109, "position": "CF", "age": 27, "overall": 89, "potential": 89, "value_m": 120.0, "wage_k": 420.0, "contract_years": 3.0, "importance": 1.0},
+
+    {"id": 11, "name": "BHA Goalkeeper", "club_id": 377, "position": "GK", "age": 27, "overall": 78, "potential": 80, "value_m": 14.0, "wage_k": 70.0, "contract_years": 2.0, "importance": 0.8},
+    {"id": 12, "name": "BHA Centre Back", "club_id": 377, "position": "CB", "age": 23, "overall": 79, "potential": 84, "value_m": 25.0, "wage_k": 80.0, "contract_years": 3.0, "importance": 0.8},
+    {"id": 13, "name": "BHA Midfielder", "club_id": 377, "position": "CMF", "age": 21, "overall": 78, "potential": 86, "value_m": 30.0, "wage_k": 75.0, "contract_years": 4.0, "importance": 0.8},
+    {"id": 14, "name": "BHA Winger", "club_id": 377, "position": "RWF", "age": 20, "overall": 77, "potential": 87, "value_m": 28.0, "wage_k": 70.0, "contract_years": 4.0, "importance": 0.7},
+    {"id": 15, "name": "BHA Striker", "club_id": 377, "position": "CF", "age": 24, "overall": 80, "potential": 84, "value_m": 30.0, "wage_k": 90.0, "contract_years": 3.0, "importance": 0.8},
+
+    {"id": 1001, "name": "Elite Right Back", "club_id": 9001, "position": "RB", "age": 27, "overall": 86, "potential": 86, "value_m": 70.0, "wage_k": 290.0, "contract_years": 2.0, "importance": 0.9},
+    {"id": 1002, "name": "High-Level Right Back", "club_id": 9002, "position": "RB", "age": 24, "overall": 83, "potential": 86, "value_m": 52.0, "wage_k": 170.0, "contract_years": 2.0, "importance": 0.8},
+    {"id": 1003, "name": "Random Prime Fullback", "club_id": 9003, "position": "RB", "age": 27, "overall": 72, "potential": 73, "value_m": 6.0, "wage_k": 45.0, "contract_years": 2.0, "importance": 0.7},
+    {"id": 1004, "name": "Wonderkid Fullback", "club_id": 9004, "position": "RB", "age": 18, "overall": 74, "potential": 89, "value_m": 22.0, "wage_k": 55.0, "contract_years": 3.0, "importance": 0.6},
+    {"id": 1005, "name": "Accessible Young Centre Back", "club_id": 9005, "position": "CB", "age": 20, "overall": 76, "potential": 86, "value_m": 20.0, "wage_k": 55.0, "contract_years": 3.0, "importance": 0.6},
+    {"id": 1006, "name": "Free Veteran Midfielder", "club_id": null, "position": "CMF", "age": 32, "overall": 80, "potential": 80, "value_m": 5.0, "wage_k": 120.0, "contract_years": 0.0, "importance": 0.5}
+  ]
+}
