@@ -1,6 +1,6 @@
 # LM AI Director
 
-Base experimental para convertir la Liga Master de **SP Football Life 2026 v1.1 / PES 2021** en un mercado más vivo y coherente.
+Base experimental para convertir la Liga Master de **SP Football Life 2026 v1.4 / PES 2021** en un mercado más vivo y coherente.
 
 ## Objetivo
 
@@ -32,11 +32,11 @@ Incluye:
 4. scoring de candidatos;
 5. generación determinista de propuestas de mercado;
 6. perfiles/arquetipos de clubes;
-7. configuración específica para FL26 v1.1;
+7. configuración específica para FL26 v1.4;
 8. módulo Sider seguro que registra equipos observados durante Liga Master sin escribir memoria;
 9. contrato preparado para añadir después el inyector de transferencias.
 
-La primera versión **NO escribe aún fichajes dentro de una Liga Master activa**. Eso queda deliberadamente bloqueado hasta identificar y validar la rutina/estructura correcta de FL26 v1.1. No se incluyen offsets inventados.
+La primera versión **NO escribe aún fichajes dentro de una Liga Master activa**. Eso queda deliberadamente bloqueado hasta identificar y validar la rutina/estructura correcta de FL26 v1.4. No se incluyen offsets inventados.
 
 ## Inicio rápido
 
@@ -44,7 +44,7 @@ La primera versión **NO escribe aún fichajes dentro de una Liga Master activa*
 python -m pip install -e .
 python -m lm_ai.cli \
   --world examples/world.json \
-  --config config/fl26_1_1.json \
+  --config config/fl26_1_4.json \
   --seed 26 \
   --output out/proposals.json
 ```
@@ -71,11 +71,11 @@ lua.module = "lm_ai_bridge.lua"
 
 El bridge actual es sólo de observación. Registra `set_teams` y `context_reset`, y muestra estado en el overlay. No modifica memoria ni saves.
 
-Ver `docs/FL26_1_1_SETUP.md` y `docs/ARCHITECTURE.md`.
+Ver `docs/FL26_1_4_SETUP.md` y `docs/ARCHITECTURE.md`.
 
 ## Roadmap inmediato
 
-- **P1 — ML Inspector:** localizar estructuras de club/jugador/contrato/presupuesto en FL26 v1.1.
+- **P1 — ML Inspector:** localizar estructuras de club/jugador/contrato/presupuesto en FL26 v1.4.
 - **P2 — Market Observer:** observar cuándo la Liga Master genera actividad de mercado.
 - **P3 — Transfer Injector:** ejecutar un único traspaso controlado y persistente en un save de prueba.
 - **P4 — Frequency Hook:** aumentar intentos de mercado sin perder lógica.
@@ -84,4 +84,4 @@ Ver `docs/FL26_1_1_SETUP.md` y `docs/ARCHITECTURE.md`.
 
 ## Principio de seguridad del proyecto
 
-Nunca escribir en memoria basándonos sólo en offsets de otra versión de PES/Football Life. Cada firma para FL26 v1.1 debe validarse antes de habilitar escritura.
+Nunca escribir en memoria basándonos sólo en offsets de otra versión de PES/Football Life. Cada firma para FL26 v1.4 debe validarse antes de habilitar escritura.
