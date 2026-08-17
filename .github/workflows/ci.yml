@@ -17,4 +17,4 @@ jobs:
       - name: Unit tests
         run: python -m unittest discover -s tests -v
       - name: Smoke test CLI
-        run: python -m lm_ai.cli --world examples/world.json --config config/fl26_1_1.json --seed 26 --output out/proposals.json
+        run: python -m lm_ai.cli --world examples/world.json --config config/fl26_1_4.json --seed 26 --output out/proposals.json
