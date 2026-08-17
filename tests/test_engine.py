@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class TransferDirectorTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with (ROOT / "config" / "fl26_1_1.json").open("r", encoding="utf-8") as handle:
+        with (ROOT / "config" / "fl26_1_4.json").open("r", encoding="utf-8") as handle:
             cls.config = json.load(handle)
 
     def test_midtable_club_cannot_buy_superstar(self):
