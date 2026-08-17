@@ -1,0 +1,59 @@
+{
+  "target": {
+    "game": "SP Football Life 2026",
+    "version": "1.1",
+    "base": "PES 2021",
+    "sider_min": "7.3.0"
+  },
+  "mode": "proposal_only",
+  "memory_write_enabled": false,
+  "roster_targets": {
+    "GK": 2,
+    "CB": 4,
+    "FB": 4,
+    "MID": 5,
+    "WIDE": 4,
+    "ATT": 3
+  },
+  "starter_slots": {
+    "GK": 1,
+    "CB": 2,
+    "FB": 2,
+    "MID": 3,
+    "WIDE": 2,
+    "ATT": 1
+  },
+  "weights": {
+    "need": 30,
+    "quality": 20,
+    "potential": 15,
+    "affordability": 10,
+    "prestige": 10,
+    "age": 5,
+    "market_fit": 5,
+    "randomness": 5
+  },
+  "hard_gates": {
+    "max_age": 37,
+    "max_budget_ratio": 1.05,
+    "max_wage_ratio": 1.15,
+    "star_ovr": 86,
+    "star_min_prestige": 72,
+    "max_quality_drop": 10,
+    "seller_prestige_gap": 22,
+    "protected_importance": 0.72
+  },
+  "age_ranges": {
+    "elite": [21, 29],
+    "contender": [20, 28],
+    "developer": [17, 24],
+    "midtable": [20, 29],
+    "survival": [22, 31]
+  },
+  "reverse_engineering": {
+    "executable_signatures": {},
+    "memory_offsets": {},
+    "status": "UNRESOLVED_FL26_1_1",
+    "rule": "Never enable memory writes until signatures are validated against FL26 v1.1."
+  }
+}
