@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lm-ai-director"
+version = "0.1.0"
+description = "AI transfer director base for PES 2021 / SP Football Life 2026 Master League"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+lm-ai = "lm_ai.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
