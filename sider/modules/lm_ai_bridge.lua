@@ -1,11 +1,11 @@
 -- LM AI Director - safe observation bridge for SP Football Life 2026 v1.1
 --
--- This first bridge DOES NOT write to game memory.
+-- This bridge DOES NOT write to game memory.
 -- It records team IDs seen by Sider and gives us a stable, version-safe
 -- starting point for reverse engineering Master League state.
 
 local m = {}
-local VERSION = "0.1.0-fl26.1.1"
+local VERSION = "0.1.1-fl26.1.1"
 local last_home = nil
 local last_away = nil
 local observation_path = nil
@@ -21,6 +21,13 @@ local function append_line(path, line)
 end
 
 function m.set_teams(ctx, home_team, away_team)
+    -- Sider documents that some events can fire more than once for the same
+    -- game action. Ignore consecutive duplicates so the observation file does
+    -- not become noisy and misleading during reverse engineering.
+    if last_home == home_team and last_away == away_team then
+        return
+    end
+
     last_home = home_team
     last_away = away_team
     append_line(
