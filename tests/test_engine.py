@@ -49,6 +49,48 @@ class TransferDirectorTests(unittest.TestCase):
         self.assertIsNotNone(p2)
         self.assertAlmostEqual(p1.score, p2.score, places=8)
 
+    def test_player_listed_at_buyer_is_not_treated_as_free_agent(self):
+        buyer = Club(1, "Club", "ESP1", 80, 80, 100.0, 200.0, "midtable", player_ids=[10])
+        player = Player(10, "Own Player", None, "CMF", 25, 80, 82, 20.0, 80.0)
+        director = TransferDirector([buyer], [player], self.config)
+        self.assertEqual(director.rejection_reason(buyer, player, 0.0), "already_at_club")
+
+    def test_conflicting_membership_fails_fast(self):
+        club_a = Club(1, "A", "ESP1", 80, 80, 100.0, 200.0, player_ids=[10])
+        club_b = Club(2, "B", "ESP1", 80, 80, 100.0, 200.0)
+        player = Player(10, "Conflict", 2, "CMF", 25, 80, 82, 20.0, 80.0)
+        with self.assertRaisesRegex(ValueError, "Conflicting club membership"):
+            TransferDirector([club_a, club_b], [player], self.config)
+
+    def test_duplicate_player_ids_fail_fast(self):
+        club = Club(1, "Club", "ESP1", 80, 80, 100.0, 200.0)
+        p1 = Player(10, "A", None, "CMF", 25, 80, 82, 20.0, 80.0)
+        p2 = Player(10, "B", None, "CF", 24, 79, 83, 18.0, 70.0)
+        with self.assertRaisesRegex(ValueError, "Duplicate player IDs"):
+            TransferDirector([club], [p1, p2], self.config)
+
+    def test_unknown_position_fails_fast(self):
+        club = Club(1, "Club", "ESP1", 80, 80, 100.0, 200.0)
+        player = Player(10, "Unknown", None, "XYZ", 25, 80, 82, 20.0, 80.0)
+        with self.assertRaisesRegex(ValueError, "Unsupported position"):
+            TransferDirector([club], [player], self.config)
+
+    def test_partial_weight_override_keeps_defaults(self):
+        config = dict(self.config)
+        config["weights"] = {"randomness": 0}
+        buyer = Club(1, "Club", "ESP1", 80, 80, 100.0, 200.0)
+        player = Player(10, "Candidate", None, "CMF", 25, 80, 82, 20.0, 80.0)
+        director = TransferDirector([buyer], [player], config)
+        proposal = director.score_candidate(buyer, player, {"MID": 0.8})
+        self.assertIsNotNone(proposal)
+
+    def test_non_positive_shortlist_limit_is_rejected(self):
+        club = Club(1, "Club", "ESP1", 80, 80, 100.0, 200.0)
+        player = Player(10, "Candidate", None, "CMF", 25, 80, 82, 20.0, 80.0)
+        director = TransferDirector([club], [player], self.config)
+        with self.assertRaisesRegex(ValueError, "limit"):
+            director.shortlist_for_club(1, limit=0)
+
 
 if __name__ == "__main__":
     unittest.main()
