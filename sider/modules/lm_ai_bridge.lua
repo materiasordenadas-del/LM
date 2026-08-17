@@ -1,11 +1,11 @@
--- LM AI Director - safe observation bridge for SP Football Life 2026 v1.1
+-- LM AI Director - safe observation bridge for SP Football Life 2026 v1.4
 --
 -- This bridge DOES NOT write to game memory.
 -- It records team IDs seen by Sider and gives us a stable, version-safe
 -- starting point for reverse engineering Master League state.
 
 local m = {}
-local VERSION = "0.1.1-fl26.1.1"
+local VERSION = "0.1.2-fl26.1.4"
 local last_home = nil
 local last_away = nil
 local observation_path = nil
