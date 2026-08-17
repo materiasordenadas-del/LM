@@ -40,7 +40,14 @@ class Player:
 
     @property
     def group(self) -> str:
-        return POSITION_GROUPS.get(self.position.upper(), "MID")
+        position = self.position.strip().upper()
+        try:
+            return POSITION_GROUPS[position]
+        except KeyError as exc:
+            raise ValueError(
+                f"Unsupported position {self.position!r} for player {self.id} ({self.name}). "
+                "Map the source position to a PES position before running the director."
+            ) from exc
 
 
 @dataclass(slots=True)
