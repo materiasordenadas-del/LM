@@ -28,7 +28,7 @@ Football Life / save state
 
 ## 1. ML Inspector
 
-Responsabilidad futura: leer de FL26 v1.1 el estado real de:
+Responsabilidad futura: leer de FL26 v1.4 el estado real de:
 
 - jugador -> club;
 - edad, posición, OVR y datos de desarrollo;
@@ -75,7 +75,7 @@ Se usan para impedir que la aleatoriedad produzca operaciones absurdas:
  5% variabilidad aleatoria
 ```
 
-Los pesos son configurables en `config/fl26_1_1.json`.
+Los pesos son configurables en `config/fl26_1_4.json`.
 
 ## 3. Market Resolver — siguiente capa
 
@@ -97,7 +97,7 @@ Nunca debe modificar únicamente un supuesto `team_id` del jugador. Un traspaso 
 
 Objetivo técnico preferido:
 
-1. localizar la rutina nativa de FL26 v1.1 que finaliza un traspaso;
+1. localizar la rutina nativa de FL26 v1.4 que finaliza un traspaso;
 2. observar sus argumentos/estructuras;
 3. reproducir una operación controlada;
 4. verificar persistencia después de guardar/cerrar/reabrir;
