@@ -29,6 +29,9 @@ def main() -> None:
     parser.add_argument("--output", required=True, help="Output JSON path")
     args = parser.parse_args()
 
+    if args.limit < 1:
+        parser.error("--limit must be >= 1")
+
     config = _load_json(args.config)
     clubs, players = _load_world(args.world)
     director = TransferDirector(clubs, players, config, seed=args.seed)
